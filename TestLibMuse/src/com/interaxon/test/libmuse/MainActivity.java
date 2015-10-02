@@ -101,18 +101,18 @@ public class MainActivity extends Activity implements OnClickListener {
                         TextView statusText =
                                 (TextView) findViewById(R.id.con_status);
                         statusText.setText(status);
-                        TextView museVersionText =
-                                (TextView) findViewById(R.id.version);
-                        if (current == ConnectionState.CONNECTED) {
-                            MuseVersion museVersion = muse.getMuseVersion();
-                            String version = museVersion.getFirmwareType() +
-                                 " - " + museVersion.getFirmwareVersion() +
-                                 " - " + Integer.toString(
-                                    museVersion.getProtocolVersion());
-                            museVersionText.setText(version);
-                        } else {
-                            museVersionText.setText(R.string.undefined);
-                        }
+//                       TextView museVersionText =
+//                               (TextView) findViewById(R.id.version);
+//                        if (current == ConnectionState.CONNECTED) {
+//                            MuseVersion museVersion = muse.getMuseVersion();
+//                            String version = museVersion.getFirmwareType() +
+//                                 " - " + museVersion.getFirmwareVersion() +
+//                                 " - " + Integer.toString(
+//                                    museVersion.getProtocolVersion());
+//                            museVersionText.setText(version);
+//                        } else {
+//                            museVersionText.setText(R.string.undefined);
+//                        }
                     }
                 });
             }
@@ -151,11 +151,13 @@ public class MainActivity extends Activity implements OnClickListener {
                     break;
                 case BATTERY:
                     fileWriter.addDataPacket(1, p);
+                                 
                     // It's library client responsibility to flush the buffer,
                     // otherwise you may get memory overflow. 
                     if (fileWriter.getBufferedMessagesSize() > 8096)
                         fileWriter.flush();
                     break;
+       
                 default:
                     break;
             }
@@ -163,9 +165,23 @@ public class MainActivity extends Activity implements OnClickListener {
 
         @Override
         public void receiveMuseArtifactPacket(MuseArtifactPacket p) {
-            if (p.getHeadbandOn() && p.getBlink()) {
+            boolean ison = p.getHeadbandOn();
+        	boolean blink = p.getBlink();
+            boolean jawclench = p.getJawClench();
+            
+        	if (ison && blink) {
                 Log.i("Artifacts", "blink");
             }
+            if (ison && jawclench) {
+                Log.i("Artifacts", "jaw clench");
+                clench_count = clench_count+1;
+                	if(clench_count ==13)
+                		clench_count = 1;
+            }
+            if(ison){
+            	updateBlinkJaw(blink,clench_count==12);
+            }
+            
         }
 
         private void updateAccelerometer(final ArrayList<Double> data) {
@@ -233,6 +249,27 @@ public class MainActivity extends Activity implements OnClickListener {
                 });
             }
         }
+        
+        private void updateBlinkJaw( final boolean blink, final boolean jaw) {
+            Activity activity = activityRef.get();
+            
+            if (activity != null) {
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                    	
+                         TextView blink_t = (TextView) findViewById(R.id.blink);
+                         TextView jaw_t = (TextView) findViewById(R.id.jaw);
+                         
+                         blink_t.setText(String.format(
+                            "%b", blink));
+                         jaw_t.setText(String.format(
+                            "%b", jaw));
+                         
+                    }
+                });
+            }
+        }
 
         public void setFileWriter(MuseFileWriter fileWriter) {
             this.fileWriter  = fileWriter;
@@ -244,6 +281,7 @@ public class MainActivity extends Activity implements OnClickListener {
     private DataListener dataListener = null;
     private boolean dataTransmission = true;
     private MuseFileWriter fileWriter = null;
+    private int clench_count = 0;
 
     public MainActivity() {
         // Create listeners and pass reference to activity to them
