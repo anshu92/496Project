@@ -157,6 +157,12 @@ public class MainActivity extends Activity implements OnClickListener {
                     if (fileWriter.getBufferedMessagesSize() > 8096)
                         fileWriter.flush();
                     break;
+                case MELLOW:
+                	updateMellow(p.getValues());
+                	break;
+                case CONCENTRATION:
+                	updateConcentration(p.getValues());
+                	break;           
        
                 default:
                     break;
@@ -175,11 +181,11 @@ public class MainActivity extends Activity implements OnClickListener {
             if (ison && jawclench) {
                 Log.i("Artifacts", "jaw clench");
                 clench_count = clench_count+1;
-                	if(clench_count ==13)
+                	if(clench_count ==7)
                 		clench_count = 1;
             }
             if(ison){
-            	updateBlinkJaw(blink,clench_count==12);
+            	updateBlinkJaw(blink,clench_count==5);
             }
             
         }
@@ -245,6 +251,39 @@ public class MainActivity extends Activity implements OnClickListener {
                             "%6.2f", data.get(Eeg.FP2.ordinal())));
                          elem4.setText(String.format(
                             "%6.2f", data.get(Eeg.TP10.ordinal())));
+                    }
+                });
+            }
+        }
+        
+        private void updateMellow(final ArrayList<Double> data) {
+            Activity activity = activityRef.get();
+            if (activity != null) {
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                         TextView mellow = (TextView) findViewById(R.id.mellow);
+                         double n = 100 * data.get(0);
+                         mellow.setText(String.format(
+                            "%4.2f", n));
+                      
+                    }
+                });
+            }
+        }
+        
+        private void updateConcentration(final ArrayList<Double> data) {
+            Activity activity = activityRef.get();
+            if (activity != null) {
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                         TextView concentration = (TextView) findViewById(R.id.concentration);
+                         
+                         double n = 100 * data.get(0);
+                         concentration.setText(String.format(
+                            "%4.2f", n));
+                      
                     }
                 });
             }
@@ -449,6 +488,10 @@ public class MainActivity extends Activity implements OnClickListener {
                                   MuseDataPacketType.ARTIFACTS);
         muse.registerDataListener(dataListener,
                                   MuseDataPacketType.BATTERY);
+        muse.registerDataListener(dataListener,
+        						  MuseDataPacketType.MELLOW);
+        muse.registerDataListener(dataListener,
+        						  MuseDataPacketType.CONCENTRATION);
         muse.setPreset(MusePreset.PRESET_14);
         muse.enableDataTransmission(dataTransmission);
     }

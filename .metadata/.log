@@ -548,3 +548,6 @@ Contains: Could not delete: C:\Users\asahoo264\Documents\GitHub\496Project\TestL
 !MESSAGE Could not delete: C:\Users\asahoo264\Documents\GitHub\496Project\TestLibMuse\bin\res\crunch.
 !SUBENTRY 5 org.eclipse.core.filesystem 4 273 2015-10-02 18:49:15.629
 !MESSAGE Could not delete: C:\Users\asahoo264\Documents\GitHub\496Project\TestLibMuse\bin\res.
+
+!ENTRY org.eclipse.ui 4 4 2015-10-02 21:34:51.314
+!MESSAGE Referenced part does not exist yet: org.eclipse.ui.views.ProblemView.

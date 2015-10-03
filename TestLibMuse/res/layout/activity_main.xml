@@ -215,7 +215,36 @@
             android:text="@string/init_val"
             android:textSize="16sp" />
     </LinearLayout>
+   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/mellow_concentration"
+        android:textSize="16sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/mellow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/init_val_percent"
+            android:textSize="16sp"
+            tools:ignore="NestedWeights" />
+
+        <TextView
+            android:id="@+id/concentration"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/init_val_percent"
+            android:textSize="16sp" />
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"

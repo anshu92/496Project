@@ -9,6 +9,7 @@
     <string name="disconnect">Disconnect</string>
     <string name="refresh">Refresh</string>
     <string name="init_val">0.0</string>
+	<string name="init_val_percent">0.0 %</string>
     <string name="eeg">EEG data:</string>
     <string name="accel">Accelerometer Data:</string>
     <string name="version">Version:</string>
@@ -18,6 +19,6 @@
     <string name="pause">Pause/Resume</string>
     <string name="drop">Drop</string>
     <string name="muse_elem">Elements:</string>
-    
+    <string name="mellow_concentration">Mellow/Concentration:</string>
 
 </resources>
