@@ -1,0 +1,239 @@
+package com.interaxon.test.libmuse;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+public class Calibration extends Activity implements OnClickListener{
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_calibration);
+		View startCal = findViewById(R.id.startCal);
+		startCal.setOnClickListener(this);
+		View sad = findViewById(R.id.sad);
+		sad.setOnClickListener(this);
+		View happy = findViewById(R.id.happy);
+		happy.setOnClickListener(this);
+		
+	}
+	    
+	public void onClick(View v) {
+		
+		View startCal = findViewById(R.id.startCal);
+		View sad = findViewById(R.id.sad);
+		View happy = findViewById(R.id.happy);
+		
+		View sad1 = findViewById(R.id.sad1);
+		View sad2 = findViewById(R.id.sad2);
+		View sad3 = findViewById(R.id.sad3);
+		View sad4 = findViewById(R.id.sad4);
+		View happy1 = findViewById(R.id.happy1);
+		View happy2 = findViewById(R.id.happy2);
+		View happy3 = findViewById(R.id.happy3);
+		
+		switch (v.getId()) { 
+	    case R.id.startCal:
+	    	startCal.setVisibility(View.INVISIBLE);
+	    	Handler timerHandler1a = new Handler();
+	    	timerHandler1a.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	            	sad1.setVisibility(View.VISIBLE);
+	            	happy.setVisibility(View.VISIBLE);
+	            	sad.setVisibility(View.VISIBLE);
+	            }
+	        }, 1000);
+	    	Handler timerHandler1b = new Handler();
+	    	timerHandler1b.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	    	    	sad1.setVisibility(View.INVISIBLE);
+	            }
+	        }, 3000);
+	        //finish();
+	        break;
+	    case R.id.happy:
+	    	sad1.setVisibility(View.INVISIBLE);
+        	happy.setVisibility(View.INVISIBLE);
+        	sad.setVisibility(View.INVISIBLE);
+	    	Handler timerHandler2a = new Handler();
+	    	timerHandler2a.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	            	sad1.setVisibility(View.VISIBLE);
+	            	happy.setVisibility(View.VISIBLE);
+	            	sad.setVisibility(View.VISIBLE);
+	            }
+	        }, 3000);
+	    	Handler timerHandler2b = new Handler();
+	    	timerHandler2b.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	    	    	sad1.setVisibility(View.INVISIBLE);
+	            }
+	        }, 3000);
+	        //finish();
+	        break;
+	    case R.id.sad:
+	    	happy1.setVisibility(View.INVISIBLE);
+        	happy.setVisibility(View.INVISIBLE);
+        	sad.setVisibility(View.INVISIBLE);
+	    	Handler timerHandler3a = new Handler();
+	    	timerHandler3a.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	            	happy1.setVisibility(View.VISIBLE);
+	            	happy.setVisibility(View.VISIBLE);
+	            	sad.setVisibility(View.VISIBLE);
+	            }
+	        }, 3000);
+	    	Handler timerHandler3b = new Handler();
+	    	timerHandler3b.postDelayed(new Runnable() {
+	    		View startCal = findViewById(R.id.startCal);
+	    		View sad = findViewById(R.id.sad);
+	    		View happy = findViewById(R.id.happy);
+	    		
+	    		View sad1 = findViewById(R.id.sad1);
+	    		View sad2 = findViewById(R.id.sad2);
+	    		View sad3 = findViewById(R.id.sad3);
+	    		View sad4 = findViewById(R.id.sad4);
+	    		View happy1 = findViewById(R.id.happy1);
+	    		View happy2 = findViewById(R.id.happy2);
+	    		View happy3 = findViewById(R.id.happy3);
+	            public void run() {
+	            	happy1.setVisibility(View.INVISIBLE);
+	            }
+	        }, 3000);
+	        //finish();
+	        break;
+	    }
+		
+	}
+	
+	/*
+	 * 
+	 Handler timerHandler = new Handler();
+	 Runnable timerRunnable = new Runnable() {
+    @Override
+    public void run() {
+        TextView.setText(str);
+        // other stuff
+        timerHandler.postDelayed(this, 500); }
+		};
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.calibration, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+}
+
+/*
+private Timer myTimer;
+
+/** Called when the activity is first created. 
+@Override
+public void onCreate(Bundle icicle) {
+    super.onCreate(icicle);
+    setContentView(R.layout.main);
+
+    myTimer = new Timer();
+    myTimer.schedule(new TimerTask() {          
+        @Override
+        public void run() {
+            TimerMethod();
+        }
+
+    }, 0, 1000);
+}
+
+private void TimerMethod()
+{
+    //This method is called directly by the timer
+    //and runs in the same thread as the timer.
+
+    //We call the method that will work with the UI
+    //through the runOnUiThread method.
+    this.runOnUiThread(Timer_Tick);
+}
+
+
+private Runnable Timer_Tick = new Runnable() {
+    public void run() {
+
+    //This method runs in the same thread as the UI.               
+
+    //Do something to the UI thread here
+
+    }
+*/

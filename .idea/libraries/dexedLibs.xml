@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/TestLibMuse/bin/dexedLibs/libmuseandroid-27605b3952aba5d17027eded459810d6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TestLibMuse/bin/dexedLibs/libmuseandroid-8bc4615d407cae432aec50998993b5bf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TestLibMuse/bin/dexedLibs/android-support-v4-e77a5561fcbdcb82ccdfca5aa6f29506.jar!/" />
+      <root url="jar://$PROJECT_DIR$/TestLibMuse/bin/dexedLibs/android-support-v4-a26664ebf41c83f15a67c75a671e0bee.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

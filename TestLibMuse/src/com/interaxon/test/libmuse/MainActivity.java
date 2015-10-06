@@ -331,6 +331,7 @@ public class MainActivity extends Activity implements OnClickListener {
         dataListener = new DataListener(weakActivity);
     }
 
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

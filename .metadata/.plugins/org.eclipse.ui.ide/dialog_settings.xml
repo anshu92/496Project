@@ -5,8 +5,8 @@
 		<item value="true" key="BUILD_ALL"/>
 		<item value="false" key="TOGGLE_SELECTED"/>
 		<item value="651" key="DIALOG_HEIGHT"/>
-		<item value="1126" key="DIALOG_X_ORIGIN"/>
-		<item value="540" key="DIALOG_Y_ORIGIN"/>
+		<item value="253" key="DIALOG_X_ORIGIN"/>
+		<item value="91" key="DIALOG_Y_ORIGIN"/>
 		<item value="true" key="BUILD_NOW"/>
 	</section>
 	<section name="ResourceNavigator">

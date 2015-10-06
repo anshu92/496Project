@@ -1,0 +1,5 @@
+
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+        <item android:id="@+id/original" android:enabled="true" android:title="original"></item>
+        <item android:id="@+id/calibration" android:enabled="true" android:title="calibration"></item>
+    </menu>
